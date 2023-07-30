@@ -30,9 +30,9 @@ class HomeScreen extends StatelessWidget {
           child: Container(
               width: double.infinity,
               height: double.infinity,
-              child: const Column(
+              child: Column(
                 children: [
-                  Text(
+                  const Text(
                     "Hello",
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -41,6 +41,26 @@ class HomeScreen extends StatelessWidget {
                       fontWeight: FontWeight.w900,
                     ),
                   ),
+                  Row(
+                    children: [
+                      TextButton(
+                          onPressed: () {
+                            print("TextButton clicked");
+                          },
+                          child: const Text("chick me")),
+                      IconButton(
+                        onPressed: () {
+                          print("IconButton clicked");
+                        },
+                        icon: const Icon(Icons.mic),
+                      )
+                    ],
+                  ),
+                  ElevatedButton(
+                      onPressed: () {
+                        print("ElevatedButton clicked");
+                      },
+                      child: const Text("chick me"))
                 ],
               ))),
     );
