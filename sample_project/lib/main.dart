@@ -52,7 +52,7 @@ class HomeScreen extends StatelessWidget {
                         onPressed: () {
                           print("IconButton clicked");
                         },
-                        icon: const Icon(Icons.mic),
+                        icon: const Icon(Icons.mi),
                       )
                     ],
                   ),
