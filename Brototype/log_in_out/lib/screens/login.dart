@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:log_in_out/screens/home.dart';
 
 class ScreenLogin extends StatefulWidget {
-  ScreenLogin({super.key});
+  const ScreenLogin({super.key});
 
   @override
   State<ScreenLogin> createState() => _ScreenLoginState();
@@ -65,6 +66,11 @@ class _ScreenLoginState extends State<ScreenLogin> {
     final password = _passwordController.text;
     const errorMessage = 'username and password does not match';
     if (username == password) {
+      Navigator.of(ctx).pushReplacement(
+        MaterialPageRoute(
+          builder: (ctx1) => const ScreenHome(),
+        ),
+      );
     } else {
       // showDialog(
       //   context: context,
