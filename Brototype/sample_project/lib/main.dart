@@ -1,6 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:sample_project/listView_sample.dart';
+import 'package:sample_project/screen_1.dart';
+import 'package:sample_project/screen_2.dart';
+import 'package:sample_project/screen_check.dart';
+import 'package:sample_project/screen_counter.dart';
+import 'package:sample_project/screen_password.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
+// late SharedPreferences sharedPreferences;
+Future<void> main() async {
+  // WidgetsFlutterBinding.ensureInitialized();
+  // sharedPreferences = await SharedPreferences.getInstance();
   runApp(const MyApp());
 }
 
@@ -10,59 +20,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        primaryColor: Colors.indigo,
-      ),
-      home: const HomeScreen(),
-    );
-  }
-}
-
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.red,
-      appBar: AppBar(),
-      body: SafeArea(
-          child: Container(
-              width: double.infinity,
-              height: double.infinity,
-              child: Column(
-                children: [
-                  const Text(
-                    "Hello",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 30,
-                      fontWeight: FontWeight.w900,
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      TextButton(
-                          onPressed: () {
-                            print("TextButton clicked");
-                          },
-                          child: const Text("chick me")),
-                      IconButton(
-                        onPressed: () {
-                          print("IconButton clicked");
-                        },
-                        icon: const Icon(Icons.mic),
-                      )
-                    ],
-                  ),
-                  ElevatedButton(
-                      onPressed: () {
-                        print("ElevatedButton clicked");
-                      },
-                      child: const Text("chick me"))
-                ],
-              ))),
+      theme: ThemeData(primarySwatch: Colors.purple),
+      // home: const ListViewSample(),
+      home: const EnterValue(),
+      // routes: {
+      //   'screen_1': (ctx) {
+      //     return const ScreenOne();
+      //   },
+      //   'screen_2': (ctx) {
+      //     return const ScreenTwo();
+      //   }
+      // },
     );
   }
 }
